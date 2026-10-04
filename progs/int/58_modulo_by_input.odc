@@ -1,0 +1,2 @@
+// TEST {"in": [7], "expected_out": [5]}
+print(47 % input());

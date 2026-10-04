@@ -1,0 +1,2 @@
+// TEST {"in": [8, 5], "expected_out": [26]}
+print(input() * input() - 2 * 7);

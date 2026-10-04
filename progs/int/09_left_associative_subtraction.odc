@@ -1,0 +1,2 @@
+// TEST {"expected_out": [5]}
+print(20 - 10 - 5);

@@ -1,0 +1,2 @@
+// TEST {"in": [1000000], "expected_out": [42]}
+print(input() - 999958);

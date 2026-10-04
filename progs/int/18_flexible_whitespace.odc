@@ -1,0 +1,6 @@
+// TEST {"expected_out": [42, 7]}
+print	(6*7);
+
+print(
+    (21 / 3)
+);

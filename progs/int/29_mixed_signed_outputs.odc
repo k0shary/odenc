@@ -1,0 +1,5 @@
+// TEST {"expected_out": [-10, 10, -25, 25]}
+print(-7 + -3);
+print(-7 - -17);
+print(5 * -5);
+print(-100 / -4);

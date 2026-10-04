@@ -1,0 +1,2 @@
+// TEST {"expected_out": [-7]}
+print(-42 / 6);

@@ -1,0 +1,2 @@
+// TEST {"in": [6, 8], "expected_out": [42]}
+print((((input() * input()) - 2 * 3)));

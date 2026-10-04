@@ -1,0 +1,2 @@
+// TEST {"expected_out": [42]}
+print((((((40 + 2))))));

@@ -1,0 +1,2 @@
+// TEST {"in": [8, 5], "expected_out": [42]}
+print((input() * input()) + (6 / 3) + (21 % 7));

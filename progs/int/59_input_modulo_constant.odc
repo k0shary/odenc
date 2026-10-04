@@ -1,0 +1,2 @@
+// TEST {"in": [100], "expected_out": [2]}
+print(input() % 7);

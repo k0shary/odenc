@@ -1,0 +1,4 @@
+// TEST {"expected_out": [42]}
+// Comments and blank lines are ignored.
+
+print(40 + 2); // An inline comment is legal too.

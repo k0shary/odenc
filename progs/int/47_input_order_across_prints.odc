@@ -1,0 +1,3 @@
+// TEST {"in": [1, 3, 4], "expected_out": [12, 7]}
+print(input() * 10 + 2);
+print(input() + input());

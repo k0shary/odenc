@@ -1,0 +1,2 @@
+// TEST {"in": [35], "expected_out": [42]}
+print(input() - -7);

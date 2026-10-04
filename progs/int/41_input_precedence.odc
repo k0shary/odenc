@@ -1,0 +1,2 @@
+// TEST {"in": [10], "expected_out": [22]}
+print(input() + 4 * 3);

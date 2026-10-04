@@ -1,0 +1,2 @@
+// TEST {"expected_out": [-8]}
+print(40 / -5);

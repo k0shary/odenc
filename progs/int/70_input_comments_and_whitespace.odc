@@ -1,0 +1,7 @@
+// TEST {"in": [40, 2, 9], "expected_out": [42, -9]}
+// Input calls may occur around arbitrary ignored whitespace.
+print(
+    input() + input() // The first two inputs form 42.
+);
+
+print(0 - input());
