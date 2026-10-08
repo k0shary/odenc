@@ -1,0 +1,4 @@
+// TEST {"expected_err": "UnexpectedCharacters"}
+var ___tmp_1;
+___tmp_1 = 1;
+print(1 + 1 + ___tmp_1);

@@ -1,0 +1,5 @@
+// TEST {"in": [12, 30], "expected_out": [42]}
+var first, second;
+first = input();
+second = input();
+print(first + second);

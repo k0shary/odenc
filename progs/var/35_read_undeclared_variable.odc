@@ -1,0 +1,3 @@
+// TEST {"expected_err": "UnknownVariable"}
+var declared;
+print(missing);

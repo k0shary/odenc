@@ -1,0 +1,6 @@
+// TEST {"expected_out": [24]}
+var first, second, third;
+third = 4;
+second = third + 2;
+first = second * third;
+print(first);

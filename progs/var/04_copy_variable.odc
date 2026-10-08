@@ -1,0 +1,5 @@
+// TEST {"expected_out": [17]}
+var source, destination;
+source = 17;
+destination = source;
+print(destination);

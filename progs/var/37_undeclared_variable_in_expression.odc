@@ -1,0 +1,5 @@
+// TEST {"expected_err": "UnknownVariable"}
+var known, result;
+known = 10;
+result = known * (missing + 2);
+print(result);

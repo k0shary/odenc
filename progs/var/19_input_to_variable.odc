@@ -1,0 +1,4 @@
+// TEST {"in": [37], "expected_out": [37]}
+var value;
+value = input();
+print(value);

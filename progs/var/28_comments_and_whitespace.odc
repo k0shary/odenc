@@ -1,0 +1,7 @@
+// TEST {"expected_out": [42]}
+// Declarations may contain several names.
+var first, second;
+
+first = 40; // Assign the larger part.
+second = 2;
+print(first + second);

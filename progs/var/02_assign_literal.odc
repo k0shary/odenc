@@ -1,0 +1,4 @@
+// TEST {"expected_out": [42]}
+var x;
+x = 42;
+print(x);

@@ -1,0 +1,7 @@
+// TEST {"expected_out": [74]}
+var value, divisor, quotient, remainder;
+value = 53;
+divisor = 7;
+quotient = value / divisor;
+remainder = value % divisor;
+print(quotient * 10 + remainder);

@@ -1,0 +1,4 @@
+// TEST {"expected_out": [85]}
+var result;
+result = 100 - 10 - 5;
+print(result);

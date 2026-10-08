@@ -1,0 +1,8 @@
+// TEST {"expected_out": [73]}
+var left, right, temporary;
+left = 3;
+right = 7;
+temporary = left;
+left = right;
+right = temporary;
+print(left * 10 + right);

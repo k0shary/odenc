@@ -1,0 +1,6 @@
+// TEST {"expected_out": [2]}
+var dividend, divisor, remainder;
+dividend = 38;
+divisor = 9;
+remainder = dividend % divisor;
+print(remainder);

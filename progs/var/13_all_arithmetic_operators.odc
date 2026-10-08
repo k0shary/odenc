@@ -1,0 +1,6 @@
+// TEST {"expected_out": [19]}
+var a, b, result;
+a = 20;
+b = 6;
+result = a + b - 3 * 2 + 8 / 4 - 7 % 4;
+print(result);

@@ -1,0 +1,8 @@
+// TEST {"in": [5, 8], "expected_out": [30]}
+var width, height, perimeter, adjustment, result;
+width = input();
+height = input();
+perimeter = 2 * (width + height);
+adjustment = width % 3;
+result = perimeter + adjustment * 2;
+print(result);

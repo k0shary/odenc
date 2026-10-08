@@ -1,0 +1,5 @@
+// TEST {"expected_out": [144]}
+var value;
+value = 12;
+value = value * value;
+print(value);

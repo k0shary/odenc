@@ -1,0 +1,12 @@
+// TEST {"expected_out": [15]}
+var total, next;
+total = 1;
+next = 2;
+total = total + next;
+next = 3;
+total = total + next;
+next = 4;
+total = total + next;
+next = 5;
+total = total + next;
+print(total);

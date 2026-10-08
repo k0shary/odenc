@@ -1,0 +1,4 @@
+// TEST {"expected_err": "UnknownVariable"}
+var result;
+result = missing;
+print(result);

@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 from typing import Callable
 
-from odenc.langs import Language, LangInt
+from odenc.langs import Language, LangInt, LangVar
 from odenc.interpreter.io import MockIo
 from odenc import Program
 from tests.utils import search_test_programs_for, load_test_program
@@ -11,6 +11,9 @@ from tests.utils import search_test_programs_for, load_test_program
 class InterpretersTest(unittest.TestCase):
     def test_int(self):
         self.interpreter_test(LangInt())
+
+    def test_var(self):
+        self.interpreter_test(LangVar())
 
     def interpreter_test(self, lang: Language):
         prog_files = search_test_programs_for(lang)

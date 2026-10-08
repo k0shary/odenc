@@ -1,0 +1,5 @@
+// TEST {"expected_out": [25]}
+var value;
+value = 10;
+value = value + 15;
+print(value);

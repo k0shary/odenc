@@ -1,0 +1,5 @@
+// TEST {"in": [7], "expected_out": [31]}
+var base, result;
+base = 10;
+result = base * 3 + input();
+print(result - 6);

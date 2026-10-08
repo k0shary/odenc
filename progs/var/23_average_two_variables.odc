@@ -1,0 +1,6 @@
+// TEST {"expected_out": [15]}
+var first, second, average;
+first = 12;
+second = 18;
+average = (first + second) / 2;
+print(average);

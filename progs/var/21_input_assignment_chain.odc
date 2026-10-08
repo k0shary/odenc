@@ -1,0 +1,6 @@
+// TEST {"in": [9], "expected_out": [18]}
+var input_value, copy, result;
+input_value = input();
+copy = input_value;
+result = copy * 2;
+print(result);

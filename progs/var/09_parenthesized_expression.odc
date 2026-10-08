@@ -1,0 +1,6 @@
+// TEST {"expected_out": [50]}
+var x, y, result;
+x = 8;
+y = 2;
+result = (x + y) * 5;
+print(result);

@@ -1,0 +1,6 @@
+// TEST {"expected_out": [2026]}
+var course_year, current_value, final_result;
+course_year = 2026;
+current_value = course_year;
+final_result = current_value;
+print(final_result);

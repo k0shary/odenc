@@ -35,3 +35,8 @@ class Language(ABC):
 class LangInt(Language):
     def name(self):
         return "int"
+
+
+class LangVar(Language):
+    def name(self):
+        return "var"

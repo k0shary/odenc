@@ -1,0 +1,3 @@
+// TEST {"expected_err": "UnknownVariable"}
+var declared;
+missing = missing + 1;

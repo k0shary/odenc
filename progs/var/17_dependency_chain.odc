@@ -1,0 +1,8 @@
+// TEST {"expected_out": [31]}
+var a, b, c, d, e;
+a = 1;
+b = a + 2;
+c = b * 3;
+d = c - 4;
+e = d * 6 + 1;
+print(e);

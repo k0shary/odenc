@@ -1,0 +1,4 @@
+// TEST {"expected_err": "VariableAlreadyDeclared"}
+var repeated, middle, last, repeated;
+last = 9;
+print(last);

@@ -1,0 +1,3 @@
+// TEST {"expected_out": [0]}
+var x;
+print(x);

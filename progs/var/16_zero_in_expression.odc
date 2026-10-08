@@ -1,0 +1,4 @@
+// TEST {"expected_out": [14]}
+var zero, value;
+value = 14;
+print(value + zero);

@@ -1,0 +1,4 @@
+// TEST {"expected_err": "VariableAlreadyDeclared"}
+var first, second, third, second;
+first = 1;
+print(first);

@@ -1,0 +1,5 @@
+// TEST {"expected_out": [-15]}
+var x, y;
+x = -7;
+y = x * 2 - 1;
+print(y);

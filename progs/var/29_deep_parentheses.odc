@@ -1,0 +1,6 @@
+// TEST {"expected_out": [81]}
+var a, b, c;
+a = 2;
+b = 3;
+c = (((a + b) * (b + 6)) + (a * b)) * 2 - 21;
+print(c);

@@ -1,0 +1,6 @@
+// TEST {"expected_out": [6]}
+var x, y, z;
+x = 1;
+y = 2;
+z = 3;
+print(x + y + z);

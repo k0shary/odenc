@@ -1,0 +1,6 @@
+// TEST {"expected_out": [10]}
+var source, copy;
+source = 10;
+copy = source;
+source = 99;
+print(copy);
