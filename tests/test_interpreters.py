@@ -20,6 +20,11 @@ class InterpretersTest(unittest.TestCase):
             with self.subTest(language=lang.name(), program=prog_path):
                 self.program_test(lang, prog_path, lambda x: x)
 
+            with self.subTest(
+                language=lang.name(), program=prog_path, modifier="pretty"
+            ):
+                self.program_test(lang, prog_path, lambda p: lang.parse(lang.pretty(p)))
+
     def program_test(
         self, lang: Language, prog_path: Path, modifier: Callable[[Program], Program]
     ):
