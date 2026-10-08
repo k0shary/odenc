@@ -31,6 +31,10 @@ class Language(ABC):
 
         return odenc.interpret(prog, lang=self, *args, **kwargs)
 
+    def compiler(self):
+        mod = self.import_module("compiler")
+        return mod.Compiler()
+
 
 class LangInt(Language):
     def name(self):
