@@ -1,5 +1,6 @@
 from __future__ import annotations
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from typing import Self
 
 
 @dataclass
@@ -48,7 +49,7 @@ class Expr(AstNode): ...
 
 
 @dataclass
-class Const(Expr):
+class Constant(Expr):
     value: int
 
 
@@ -67,6 +68,9 @@ class FuncCall(Expr):
 class BinaryOp(Expr):
     left: Expr
     right: Expr
+
+    def with_new_arguments(self, **kwargs) -> Self:
+        return replace(self, **kwargs)
 
 
 class ArithmeticOp(BinaryOp): ...

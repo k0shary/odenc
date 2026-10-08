@@ -3,6 +3,7 @@ from odenc.interpreter import VariableAlreadyDeclared, UnknownVariable
 
 class Context:
     def __init__(self, parent=None):
+        assert parent is None  # We have not yet implemented nested scopes!
         self.vars = {}
         self.parent = None
 
