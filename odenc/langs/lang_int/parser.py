@@ -1,5 +1,3 @@
-from ast import Constant
-
 from lark import v_args, Transformer as LarkTransformer
 from odenc.ast import (
     Program,
@@ -12,6 +10,7 @@ from odenc.ast import (
     DivOp,
     ModOp,
     FuncCall,
+    Constant,
 )
 
 GRAMMAR = """ 
@@ -46,9 +45,11 @@ stmt: "print" "(" expr ")" ";"          -> stmt_print
     | expr_mul "%" atom                 -> expr_mod
     | atom
 
-?atom: /-?[0-9]+/                       -> num_literal
+?atom: num_literal                     
     | "input" "(" ")"                   -> expr_input
     | "(" expr ")"
+    
+?num_literal: /-?[0-9]+/                -> num_literal              
 """
 
 
@@ -86,7 +87,7 @@ class Transformer(LarkTransformer):
         value = int(value)
 
         if not -(1 << 63) <= value < (1 << 63):
-            raise ValueError("Integer literal {expr} is out of range")
+            raise ValueError(f"Integer literal {value} is out of range")
 
         return Constant(value)
 

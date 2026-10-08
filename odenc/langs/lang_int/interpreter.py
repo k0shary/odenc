@@ -1,5 +1,3 @@
-from ast import Constant
-
 from odenc.ast import (
     Program,
     Body,
@@ -14,6 +12,7 @@ from odenc.ast import (
     Expr,
     BinaryOp,
     FuncCall,
+    Constant,
 )
 from odenc.interpreter import UnexpectedAstNode, to_int64, trunc_div, trunc_mod
 from odenc.interpreter.context import Context
@@ -75,14 +74,18 @@ class Interpreter:
                     case MulOp(_, _):
                         return to_int64(value_left * value_right)
                     case DivOp(_, _):
-                        return trunc_div(value_left, value_right)
+                        return to_int64(trunc_div(value_left, value_right))
                     case ModOp(_, _):
-                        return trunc_mod(value_left, value_right)
+                        return to_int64(trunc_mod(value_left, value_right))
                     case _:
                         raise UnexpectedAstNode(expr)
 
             case FuncCall("input", []):
-                return self.io.input_int()
+                value = self.io.input_int()
+                if not -(1 << 63) <= value < (1 << 63):
+                    raise ValueError(f"Input {value} is out of signed 64bit range")
+
+                return value
 
             case _:
                 raise UnexpectedAstNode(expr)
