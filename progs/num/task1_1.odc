@@ -1,0 +1,2 @@
+// TEST {"expected_out": [46]}
+print(0b00101110);
