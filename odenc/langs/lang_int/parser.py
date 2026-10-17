@@ -1,16 +1,18 @@
-from lark import v_args, Transformer as LarkTransformer
+from lark import Transformer as LarkTransformer
+from lark import v_args
+
 from odenc.ast import (
-    Program,
-    Body,
-    Block,
-    PrintStmt,
     AddOp,
-    SubOp,
-    MulOp,
-    DivOp,
-    ModOp,
-    FuncCall,
+    Block,
+    Body,
     Constant,
+    DivOp,
+    FuncCall,
+    ModOp,
+    MulOp,
+    PrintStmt,
+    Program,
+    SubOp,
 )
 
 GRAMMAR = """ 
@@ -48,8 +50,16 @@ stmt: "print" "(" expr ")" ";"          -> stmt_print
 ?atom: num_literal                     
     | "input" "(" ")"                   -> expr_input
     | "(" expr ")"
-    
-?num_literal: /-?[0-9]+/                -> num_literal              
+   
+
+   ///TAsk 1
+?num_literal: BINARY_LITERAL            -> num_literal
+    |  DECIMAL_LITERAL                  -> num_literal  
+    |  HEX_LITERAL                      -> num_literal 
+
+    BINARY_LITERAL:          /-?0b[01]+(_?[01]+)*/
+    DECIMAL_LITERAL:         /-?[0-9]+(_?[0-9]+)*/
+    HEX_LITERAL:             /-?0x[0-9a-fA-F]+(_?[0-9a-fA-F]+)*/
 """
 
 
@@ -84,12 +94,26 @@ class Transformer(LarkTransformer):
         return ModOp(left, right)
 
     def num_literal(self, value):
-        value = int(value)
+        ##binary_literal
+        text = str(value).replace("_", "")
+        if text.startswith("-0b"):
+            number = -int(text[3:], 2)
+        elif text.startswith("0b"):
+            number = int(text[2:], 2)
 
-        if not -(1 << 63) <= value < (1 << 63):
+        ##hexadecimal
+        elif text.startswith("-0x"):
+            number = -int(text[3:], 16)
+        elif text.startswith("0x"):
+            number = int(text[2:], 16)
+        ##decimal
+        else:
+            number = int(text, 10)
+
+        if not -(1 << 63) <= number < (1 << 63):
             raise ValueError(f"Integer literal {value} is out of range")
 
-        return Constant(value)
+        return Constant(number)
 
     def expr_input(self):
         return FuncCall("input", [])

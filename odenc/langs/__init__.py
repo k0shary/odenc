@@ -44,3 +44,13 @@ class LangInt(Language):
 class LangVar(Language):
     def name(self):
         return "var"
+
+
+class LangNum(Language):
+    def name(self):
+        return "num"
+
+
+class LangUnary(Language):
+    def name(self):
+        return "unary"
