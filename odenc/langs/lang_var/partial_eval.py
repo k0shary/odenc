@@ -1,7 +1,26 @@
 from odenc.ast import (
-        AssignStmt, AstNode, BinaryOp, Block, Body, FuncCall, PrintStmt, Program, Constant, DivOp, Expr, FuncCall, ModOp, MulOp, Stmt, SubOp, AddOp 
+        AssignStmt,
+        AstNode,
+        BinaryOp,
+        Block,
+        Body,
+        FuncCall,
+        PrintStmt,
+        Program,
+        Constant,
+        DivOp,
+        Expr,
+        ModOp,
+        MulOp,
+        Stmt,
+        SubOp,
+        AddOp 
         )
-from odenc.interpreter import (to_int64, trunc_div, trunc_mod)
+from odenc.interpreter import (
+        to_int64,
+        trunc_div,
+        trunc_mod
+        )
 
 #Task 3a)
 class BinaryOpCounter:
@@ -44,7 +63,10 @@ class PartialEval:
         return Program(body=self.pe_body(prog.body))
 
     def pe_body(self, body: Body) -> Body:
-        return Body(var_decls=body.var_decls, fun_decls=body.fun_decls, block=self.pe_block(body.block))
+        return Body(var_decls=body.var_decls,
+                    fun_decls=body.fun_decls,
+                    block=self.pe_block(body.block)
+                    )
 
     ##iterate through each statement one by one to optimize
     def pe_block(self, block: Block) -> Block:
@@ -55,8 +77,10 @@ class PartialEval:
         if isinstance(stmt, PrintStmt):
             return PrintStmt(expr=self.pe_expr(stmt.expr))
 
+
         if isinstance(stmt, AssignStmt):
-            return AssignStmt(name=stmt.name, value=self.pe_expr(stmt.value))
+            return AssignStmt(name=stmt.name,
+                              value=self.pe_expr(stmt.value))
 
         if isinstance(stmt, Block):
             return self.pe_block(stmt)
@@ -69,10 +93,13 @@ class PartialEval:
             new_left = self.pe_expr(expr.left)
             new_right= self.pe_expr(expr.right)
 
-            new = expr.with_new_arguments(left=new_left, right=new_right)
+            new = expr.with_new_arguments(left=new_left,
+                                          right=new_right)
 
             if isinstance(new_left, Constant) and isinstance(new_right, Constant):
-                result = self._evaluate(new, new_left.value, new_right.value)
+                result = self._evaluate(new,
+                                        new_left.value,
+                                        new_right.value)
                 if result is not None:
                     return Constant(value=result)
             return new
