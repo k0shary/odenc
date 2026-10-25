@@ -1,0 +1,3 @@
+// TEST {"expected_err": "ZeroDivisionError"}
+print(1/0);
+
