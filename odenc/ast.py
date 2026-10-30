@@ -65,6 +65,11 @@ class FuncCall(Expr):
 
 
 @dataclass
+class NegOp(Expr):
+    operand: Expr
+
+
+@dataclass
 class BinaryOp(Expr):
     left: Expr
     right: Expr
