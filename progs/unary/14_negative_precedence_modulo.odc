@@ -1,0 +1,4 @@
+// TEST {"expected_out": [-3, 3, -1]}
+print(-11 % 4);
+print(11 % -4);
+print(-5 / 3);

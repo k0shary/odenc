@@ -1,0 +1,6 @@
+// TEST {"expected_out": [-9, 6]}
+var x;
+x = 9;
+print(-x);
+x = -6;
+print(-x);

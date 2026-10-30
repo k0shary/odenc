@@ -1,0 +1,4 @@
+// TEST {"expected_out": [-10, -26, 16]}
+print(-0b1010);
+print(-0x1A);
+print(0b1_0000 - -0x0);

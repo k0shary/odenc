@@ -1,0 +1,2 @@
+// TEST {"expected_err": "UnexpectedToken"}
+print(--1);
