@@ -5,6 +5,7 @@ from odenc.interpreter.io import MockIo
 from odenc.langs import LangVar
 from odenc.langs.lang_var.partial_eval import BinaryOpCounter, PartialEval
 
+
 class PartialEvalTest(unittest.TestCase):
     def test_all_programs_match_test_lines(self):
         lang = LangVar()

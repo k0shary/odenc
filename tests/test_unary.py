@@ -51,15 +51,11 @@ class UnaryOperationsTest(unittest.TestCase):
                     self.expression(expression)
 
     def test_parenthesized_nested_negation_is_allowed(self):
-        self.assertEqual(
-            self.expression("-(-1)"), NegOp(NegOp(Constant(1)))
-        )
+        self.assertEqual(self.expression("-(-1)"), NegOp(NegOp(Constant(1))))
         self.assertEqual(self.evaluate("print(-(-1));"), [1])
 
     def test_variable_and_input_runtime(self):
-        self.assertEqual(
-            self.evaluate("var x; x = -input(); print(-x);", [8]), [8]
-        )
+        self.assertEqual(self.evaluate("var x; x = -input(); print(-x);", [8]), [8])
 
     def test_signed_64bit_overflow_wraps(self):
         self.assertEqual(
